@@ -1,0 +1,41 @@
+<nav class="navbar">
+  <button mat-icon-button (click)="goToComplexes()">
+    <i class="material-icons">arrow_back</i>
+  </button>
+  <span class="navbar-brand" *ngIf="complex">
+    {{complex.name}}
+  </span>
+  <span class="navbar-brand" *ngIf="complex">
+    {{complex.due_date | date:'medium'}}
+  </span>
+  <button mat-icon-button (click)="edit()">
+  <i class="nc-icon nc-simple-add"></i>
+</button>
+</nav>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-primary">
+              <th>Id</th>
+              <th>Exercise</th>
+              <th>Repeat Times</th>
+              <th>Done Times</th>
+            </thead>
+            <tbody *ngIf="complex">
+              <tr *ngFor="let exercise of complex.exercises">
+                <td>{{exercise.id}}</td>
+                <td>{{exercise.exercise}}</td>
+                <td>{{exercise.repeat_times}}</td>
+                <td>{{exercise.done_times}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

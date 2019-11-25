@@ -1,0 +1,14 @@
+<mat-toolbar>
+  <span>Add New Complex</span>
+</mat-toolbar>
+<mat-dialog-content>
+  <mat-form-field>
+    <input matInput placeholder="Name" [(ngModel)]="name">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="datetime-local" placeholder="Due date" [(ngModel)]="dueDate">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button color="primary" [disabled]="!name || !dueDate" (click)="add()">Add</button>
+</mat-dialog-actions>

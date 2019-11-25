@@ -1,0 +1,17 @@
+<mat-toolbar>
+  <span>Edit Complex</span>
+</mat-toolbar>
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-select placeholder="Exercises" (selectionChange)="changeAction(exerciseId)" [(ngModel)]="exerciseId">
+      <mat-option *ngFor="let exercise of exercises" [value]="exercise.id">{{ exercise.name }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input type="number" matInput placeholder="Repeat times" [(ngModel)]="repeatTimes">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button color="primary" [disabled]="!this.repeatTimes || !this.newExercises" (click)="save()">Save</button>
+</mat-dialog-actions>

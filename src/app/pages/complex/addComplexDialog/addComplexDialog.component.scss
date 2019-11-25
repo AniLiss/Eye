@@ -1,0 +1,18 @@
+::ng-deep .mat-toolbar {
+    background: none;
+}
+
+mat-toolbar {
+    padding: 0;
+}
+
+mat-dialog-content {
+    display: flex;
+    flex-direction: column;
+}
+
+mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+}

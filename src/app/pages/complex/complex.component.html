@@ -1,0 +1,42 @@
+<nav class="navbar">
+  <button mat-icon-button (click)="goBack()">
+    <i class="material-icons">arrow_back</i>
+  </button>
+  <span class="navbar-brand">Complexes</span>
+  <button mat-icon-button (click)="openDialog()">
+    <i class="nc-icon nc-simple-add"></i>
+  </button>
+</nav>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-primary">
+              <th>Id</th>
+              <th>Name</th>
+              <th>Due date</th>
+              <th>Done</th>
+              <th></th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let complex of complexes">
+                <td>{{complex.id}}</td>
+                <td>{{complex.name}}</td>
+                <td>{{complex.due_date | date:'medium' }}</td>
+                <td>{{complex.done}}</td>
+                <td>
+                  <button class="btn btn-primary btn-sm" (click)="goToEditComplex(complex.id)">
+                    Edit
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
